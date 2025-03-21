@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X, ChevronDown, Phone, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <img src="/lovable-uploads/adff0249-ac55-4012-98fe-717cf45c69e8.png" alt="MaxPest Logo" className="h-12 mr-2" />
+          <img src="/lovable-uploads/cea71945-46b4-479d-8b3f-00277ad6e9a0.png" alt="MaxPest Logo" className="h-14 mr-2" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -78,7 +79,7 @@ const Navbar = () => {
               {item.dropdown && (
                 <div 
                   className={cn(
-                    "absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg overflow-hidden z-10 transition-all duration-200 opacity-0 invisible transform translate-y-2",
+                    "absolute left-0 mt-1 w-48 bg-background rounded-md shadow-lg overflow-hidden z-10 transition-all duration-200 opacity-0 invisible transform translate-y-2 border border-border",
                     activeDropdown === `dropdown-${index}` && "opacity-100 visible transform-none"
                   )}
                 >
@@ -100,6 +101,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
+          <ThemeToggle />
           <Button className="button-hover" variant="outline" asChild>
             <a href="tel:+919444420367">
               <Phone className="mr-2 h-4 w-4" />
@@ -115,16 +117,19 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex items-center"
-        >
-          {isOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex items-center"
+          >
+            {isOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -153,7 +158,7 @@ const Navbar = () => {
                   </button>
                   <div 
                     className={cn(
-                      "mt-1 pl-4 border-l-2 border-gray-200 transition-all duration-200 overflow-hidden",
+                      "mt-1 pl-4 border-l-2 border-gray-200 dark:border-gray-700 transition-all duration-200 overflow-hidden",
                       activeDropdown === `mobile-dropdown-${index}` ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
                     )}
                   >
@@ -180,7 +185,7 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
+          <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200 dark:border-gray-700">
             <Button className="w-full" variant="outline" asChild>
               <a href="tel:+919444420367">
                 <Phone className="mr-2 h-4 w-4" />
