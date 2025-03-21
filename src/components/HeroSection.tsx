@@ -2,7 +2,8 @@
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Phone, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeroSectionProps {
   title: string;
@@ -12,16 +13,18 @@ interface HeroSectionProps {
   primaryButtonLink?: string;
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
+  showBookingForm?: boolean;
 }
 
 const HeroSection = ({
   title,
   subtitle,
   backgroundImage,
-  primaryButtonText = 'Book Now',
-  primaryButtonLink = '#',
+  primaryButtonText = 'Book an Inspection',
+  primaryButtonLink = '/book-now',
   secondaryButtonText = 'Get a Quote',
-  secondaryButtonLink = '#'
+  secondaryButtonLink = '/contact',
+  showBookingForm = false
 }: HeroSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -54,36 +57,97 @@ const HeroSection = ({
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl">
-          <h1 
-            className={cn(
-              "heading-xl text-white mb-6 transition-all duration-700 transform",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            )}
-          >
-            {title}
-          </h1>
-          <p 
-            className={cn(
-              "text-xl md:text-2xl text-white/80 mb-8 transition-all duration-700 delay-200 transform",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            )}
-          >
-            {subtitle}
-          </p>
-          <div 
-            className={cn(
-              "flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-400 transform",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            )}
-          >
-            <Button size="lg" className="button-hover" asChild>
-              <a href={primaryButtonLink}>{primaryButtonText}</a>
-            </Button>
-            <Button size="lg" variant="outline" className="button-hover bg-white/10 text-white hover:bg-white/20 hover:text-white border-white/30" asChild>
-              <a href={secondaryButtonLink}>{secondaryButtonText}</a>
-            </Button>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Hero Text Content */}
+          <div>
+            <h1 
+              className={cn(
+                "heading-xl text-white mb-6 transition-all duration-700 transform",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              )}
+            >
+              {title}
+            </h1>
+            <p 
+              className={cn(
+                "text-xl md:text-2xl text-white/80 mb-8 transition-all duration-700 delay-200 transform",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              )}
+            >
+              {subtitle}
+            </p>
+            <div 
+              className={cn(
+                "flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-400 transform",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              )}
+            >
+              <Button size="lg" className="button-hover" asChild>
+                <Link to={primaryButtonLink}>{primaryButtonText}</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="button-hover bg-white/10 text-white hover:bg-white/20 hover:text-white border-white/30" asChild>
+                <Link to={secondaryButtonLink}>{secondaryButtonText}</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="button-hover bg-white/10 text-white hover:bg-white/20 hover:text-white border-white/30" asChild>
+                <a href="https://wa.me/919444420367" target="_blank" rel="noopener noreferrer">
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  WhatsApp Us
+                </a>
+              </Button>
+            </div>
+            <div className="mt-8">
+              <a href="tel:+919444420367" className="flex items-center text-white hover:text-primary transition-colors">
+                <Phone className="mr-2 h-5 w-5" />
+                <span className="text-xl font-semibold">+91 94444 20367</span>
+              </a>
+            </div>
           </div>
+
+          {/* Quick Booking Form */}
+          {showBookingForm && (
+            <div 
+              className={cn(
+                "bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 transition-all duration-700 delay-600 transform max-w-md w-full mx-auto lg:mx-0",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              )}
+            >
+              <h3 className="text-white text-xl font-semibold mb-4">Book an Inspection</h3>
+              <form className="space-y-4">
+                <div>
+                  <input 
+                    type="text" 
+                    placeholder="Your Name" 
+                    className="w-full px-4 py-2 rounded bg-white/20 text-white border border-white/30 placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    className="w-full px-4 py-2 rounded bg-white/20 text-white border border-white/30 placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    className="w-full px-4 py-2 rounded bg-white/20 text-white border border-white/30 placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <select className="w-full px-4 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <option value="" className="bg-gray-800">Select Service</option>
+                    <option value="residential" className="bg-gray-800">Residential Pest Control</option>
+                    <option value="commercial" className="bg-gray-800">Commercial Pest Control</option>
+                    <option value="termite" className="bg-gray-800">Termite Control</option>
+                    <option value="rodent" className="bg-gray-800">Rodent Control</option>
+                    <option value="mosquito" className="bg-gray-800">Mosquito Control</option>
+                  </select>
+                </div>
+                <Button type="submit" className="w-full">Submit Request</Button>
+              </form>
+            </div>
+          )}
         </div>
       </div>
 

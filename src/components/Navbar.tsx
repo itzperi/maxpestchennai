@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
@@ -37,24 +37,24 @@ const Navbar = () => {
         { label: 'Commercial', href: '/services/commercial' },
         { label: 'Termite Control', href: '/services/termite-control' },
         { label: 'Rodent Control', href: '/services/rodent-control' },
+        { label: 'Mosquito Control', href: '/services/mosquito-control' },
       ]
     },
-    { label: 'Pest Library', href: '/pest-library' },
     { label: 'About Us', href: '/about' },
-    { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Book Now', href: '/book-now' },
   ];
 
   return (
     <nav 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled ? 'glassmorphism py-3' : 'py-5'
+        scrolled ? 'glassmorphism py-2' : 'py-4'
       )}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="text-xl font-semibold">PestFinity</span>
+          <img src="/lovable-uploads/adff0249-ac55-4012-98fe-717cf45c69e8.png" alt="MaxPest Logo" className="h-12 mr-2" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -100,11 +100,17 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button className="button-hover" variant="outline">
-            Get a Quote
+          <Button className="button-hover" variant="outline" asChild>
+            <a href="tel:+919444420367">
+              <Phone className="mr-2 h-4 w-4" />
+              Call Us
+            </a>
           </Button>
-          <Button className="button-hover">
-            Book Now
+          <Button className="button-hover" asChild>
+            <a href="https://wa.me/919444420367" target="_blank" rel="noopener noreferrer">
+              <MessageSquare className="mr-2 h-4 w-4" />
+              WhatsApp
+            </a>
           </Button>
         </div>
 
@@ -175,11 +181,17 @@ const Navbar = () => {
             </div>
           ))}
           <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
-            <Button className="w-full" variant="outline">
-              Get a Quote
+            <Button className="w-full" variant="outline" asChild>
+              <a href="tel:+919444420367">
+                <Phone className="mr-2 h-4 w-4" />
+                Call Us
+              </a>
             </Button>
-            <Button className="w-full">
-              Book Now
+            <Button className="w-full" asChild>
+              <a href="https://wa.me/919444420367" target="_blank" rel="noopener noreferrer">
+                <MessageSquare className="mr-2 h-4 w-4" />
+                WhatsApp
+              </a>
             </Button>
           </div>
         </div>

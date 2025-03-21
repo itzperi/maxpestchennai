@@ -8,9 +8,11 @@ import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Shield, BugOff, Sparkles, CheckCircle, ChevronRight } from 'lucide-react';
+import { Shield, BugOff, Sparkles, CheckCircle, ChevronRight, Phone, MessageSquare } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [animatedElements, setAnimatedElements] = useState<{[key: string]: boolean}>({
     'services': false,
     'why-choose': false,
@@ -44,11 +46,12 @@ const Index = () => {
 
       <main className="flex-grow">
         <HeroSection 
-          title="Professional Pest Control Solutions"
-          subtitle="Protect your home and business with our environmentally friendly pest control services. 100% satisfaction guaranteed."
-          backgroundImage="/lovable-uploads/e56c9b0f-4be4-496a-adb9-40606e85de18.png"
+          title="Professional Pest Control Services in Chennai"
+          subtitle="Protect your home and business with MaxPest's environmentally friendly pest control services. 100% satisfaction guaranteed."
+          backgroundImage="/lovable-uploads/89edde90-11dc-4fff-afd5-3f4b3801c8d3.png"
           primaryButtonText="Book an Inspection"
           secondaryButtonText="Get a Free Quote"
+          showBookingForm={true}
         />
 
         {/* Services Section */}
@@ -56,7 +59,7 @@ const Index = () => {
           <div className="container mx-auto">
             <SectionHeading 
               title="Our Pest Control Services" 
-              subtitle="We offer comprehensive pest management solutions for residential and commercial properties."
+              subtitle="We offer comprehensive pest management solutions for residential and commercial properties in Chennai."
               centered
               className={cn(
                 "transition-all duration-700 transform",
@@ -79,7 +82,6 @@ const Index = () => {
                       "transition-delay-450": index === 2,
                       "transition-delay-600": index === 3,
                       "transition-delay-750": index === 4,
-                      "transition-delay-900": index === 5,
                     }
                   )}
                 >
@@ -94,8 +96,8 @@ const Index = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button size="lg" className="button-hover" asChild>
-                <a href="/services">View All Services <ChevronRight className="ml-2 h-4 w-4" /></a>
+              <Button size="lg" className="button-hover" onClick={() => navigate('/book-now')}>
+                Book an Inspection <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -105,7 +107,7 @@ const Index = () => {
         <section id="why-choose" className="section-padding bg-accent">
           <div className="container mx-auto">
             <SectionHeading 
-              title="Why Choose PestFinity" 
+              title="Why Choose MaxPest" 
               subtitle="We provide the highest quality pest control services with guaranteed results."
               centered
               className={cn(
@@ -243,11 +245,20 @@ const Index = () => {
               Get in touch with our experts today and receive a free, no-obligation quote for your pest control needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 border-white button-hover">
-                Book an Inspection
+              <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 border-white button-hover" asChild>
+                <a href="/book-now">Book an Inspection</a>
               </Button>
-              <Button size="lg" className="bg-white/20 hover:bg-white/30 border-white/20 text-white button-hover">
-                Call Us Now
+              <Button size="lg" className="bg-white/20 hover:bg-white/30 border-white/20 text-white button-hover" asChild>
+                <a href="tel:+919444420367">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call Us Now
+                </a>
+              </Button>
+              <Button size="lg" className="bg-white/20 hover:bg-white/30 border-white/20 text-white button-hover" asChild>
+                <a href="https://wa.me/919444420367" target="_blank" rel="noopener noreferrer">
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  WhatsApp
+                </a>
               </Button>
             </div>
           </div>
@@ -264,38 +275,32 @@ const services = [
   {
     title: 'Residential Pest Control',
     description: 'Comprehensive pest control solutions to protect your home from unwanted pests.',
-    imageSrc: '/lovable-uploads/85ad173d-8b98-4f46-9c05-4d0c7e8cc832.png',
+    imageSrc: '/lovable-uploads/38e553f4-8248-44b8-b567-76462de7ea21.png',
     link: '/services/residential'
   },
   {
     title: 'Commercial Pest Control',
     description: 'Customized pest management programs for businesses of all sizes and industries.',
-    imageSrc: '/lovable-uploads/c31fc274-734f-4143-88b1-e3fb961fbe2b.png',
+    imageSrc: '/lovable-uploads/89edde90-11dc-4fff-afd5-3f4b3801c8d3.png',
     link: '/services/commercial'
   },
   {
     title: 'Termite Control',
     description: 'Advanced termite detection and elimination services to protect your property.',
-    imageSrc: '/lovable-uploads/7d27ac95-085a-4ba8-a158-dae4e7235c08.png',
+    imageSrc: '/lovable-uploads/425a6921-6220-46df-9ad0-a53d2fe7b653.png',
     link: '/services/termite-control'
   },
   {
     title: 'Rodent Control',
     description: 'Effective rodent removal and prevention strategies for a healthier environment.',
-    imageSrc: '/lovable-uploads/8635ae76-bfa5-4525-abb5-c7b6c50bd605.png',
+    imageSrc: '/lovable-uploads/b0e3e6bf-44bf-480c-bb9e-e0217ea77786.png',
     link: '/services/rodent-control'
   },
   {
     title: 'Mosquito Control',
     description: 'Reclaim your outdoor spaces with our mosquito reduction and prevention services.',
-    imageSrc: '/lovable-uploads/94922081-76b9-4360-b06f-62377a3de0aa.png',
+    imageSrc: '/lovable-uploads/adff0249-ac55-4012-98fe-717cf45c69e8.png',
     link: '/services/mosquito-control'
-  },
-  {
-    title: 'Bed Bug Treatment',
-    description: 'Comprehensive bed bug inspection and elimination services for your peace of mind.',
-    imageSrc: '/lovable-uploads/e56c9b0f-4be4-496a-adb9-40606e85de18.png',
-    link: '/services/bed-bug-treatment'
   }
 ];
 
@@ -343,21 +348,21 @@ const process = [
 
 const testimonials = [
   {
-    quote: 'PestFinity eliminated our termite problem completely. The technicians were professional, thorough, and respectful of our home.',
-    author: 'Sarah Johnson',
-    role: 'Homeowner',
+    quote: 'MaxPest eliminated our termite problem completely. The technicians were professional, thorough, and respectful of our home.',
+    author: 'Rajesh Kumar',
+    role: 'Homeowner, Chennai',
     rating: 5
   },
   {
-    quote: 'As a restaurant owner, pest control is critical. PestFinity has been our trusted partner for years, providing reliable and discreet service.',
-    author: 'Michael Torres',
-    role: 'Restaurant Owner',
+    quote: 'As a restaurant owner, pest control is critical. MaxPest has been our trusted partner for years, providing reliable and discreet service.',
+    author: 'Priya Sharma',
+    role: 'Restaurant Owner, Chennai',
     rating: 5
   },
   {
-    quote: 'After struggling with recurring ant problems, PestFinity solved the issue for good. Their preventive approach really works!',
-    author: 'Jennifer Miller',
-    role: 'Office Manager',
+    quote: 'After struggling with recurring ant problems, MaxPest solved the issue for good. Their preventive approach really works!',
+    author: 'Anand Mehta',
+    role: 'Office Manager, Chennai',
     rating: 4
   }
 ];
