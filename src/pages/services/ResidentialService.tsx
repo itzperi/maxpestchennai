@@ -265,11 +265,11 @@ const process = [
 const faqs = [
   {
     question: 'How often should I schedule residential pest control services?',
-    answer: 'For most homes in Chennai, we recommend quarterly treatments (every 3 months) to maintain protection throughout the year. However, this can vary based on your specific situation, pest pressure in your area, and the types of pests you're dealing with.'
+    answer: "For most homes in Chennai, we recommend quarterly treatments (every 3 months) to maintain protection throughout the year. However, this can vary based on your specific situation, pest pressure in your area, and the types of pests you're dealing with."
   },
   {
     question: 'Are the products you use safe for my family and pets?',
-    answer: 'Yes, we prioritize safety and use products that are approved for residential use. Our technicians are trained to apply treatments in a way that minimizes risk to your family, pets, and the environment. We'll provide specific safety instructions for each treatment.'
+    answer: "Yes, we prioritize safety and use products that are approved for residential use. Our technicians are trained to apply treatments in a way that minimizes risk to your family, pets, and the environment. We'll provide specific safety instructions for each treatment."
   },
   {
     question: 'How long will it take to see results?',
@@ -277,15 +277,15 @@ const faqs = [
   },
   {
     question: 'Do I need to leave my home during treatment?',
-    answer: 'In most cases, you don't need to leave your home during treatment. Our technicians will advise you on any specific precautions to take, such as staying out of treated areas until dry. For certain treatments, like fumigation, temporary relocation may be necessary.'
+    answer: "In most cases, you don't need to leave your home during treatment. Our technicians will advise you on any specific precautions to take, such as staying out of treated areas until dry. For certain treatments, like fumigation, temporary relocation may be necessary."
   },
   {
     question: 'What happens if pests return after treatment?',
-    answer: 'We stand behind our work with a satisfaction guarantee. If pests return between regularly scheduled treatments, we'll return to provide additional treatments at no extra cost. Just contact our customer service team to arrange a callback service.'
+    answer: "We stand behind our work with a satisfaction guarantee. If pests return between regularly scheduled treatments, we'll return to provide additional treatments at no extra cost. Just contact our customer service team to arrange a callback service."
   },
   {
     question: 'How can I prepare my home for pest control treatment?',
-    answer: 'We'll provide specific preparation instructions based on your treatment plan. General preparation may include cleaning, reducing clutter, moving furniture away from walls, and storing food items. Our goal is to make the process as convenient as possible for you.'
+    answer: "We'll provide specific preparation instructions based on your treatment plan. General preparation may include cleaning, reducing clutter, moving furniture away from walls, and storing food items. Our goal is to make the process as convenient as possible for you."
   }
 ];
 

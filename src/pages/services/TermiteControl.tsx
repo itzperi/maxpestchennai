@@ -208,7 +208,7 @@ const warningSigns = [
 const treatments = [
   {
     title: 'Soil Treatment & Barrier Systems',
-    description: 'We create a protective barrier in the soil around your property's foundation to prevent termites from entering the structure. This treatment involves applying specialized termiticides that either repel or eliminate termites that come into contact with the treated soil.',
+    description: "We create a protective barrier in the soil around your property's foundation to prevent termites from entering the structure. This treatment involves applying specialized termiticides that either repel or eliminate termites that come into contact with the treated soil.",
     benefits: [
       'Creates a continuous barrier of protection',
       'Long-lasting effectiveness (5+ years with proper maintenance)',

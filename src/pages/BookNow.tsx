@@ -414,7 +414,7 @@ const bookingProcess = [
   },
   {
     title: 'Follow-Up',
-    description: 'We'll follow up to ensure your satisfaction and schedule any needed follow-up treatments.'
+    description: "We'll follow up to ensure your satisfaction and schedule any needed follow-up treatments."
   }
 ];
 
@@ -425,7 +425,7 @@ const faqs = [
   },
   {
     question: 'Do I need to prepare my home before the service?',
-    answer: 'Yes, we'll provide specific preparation instructions based on the service you're booking. General preparations include removing pets, covering fish tanks, and clearing access to treatment areas. Detailed instructions will be sent after your booking is confirmed.'
+    answer: "Yes, we'll provide specific preparation instructions based on the service you're booking. General preparations include removing pets, covering fish tanks, and clearing access to treatment areas. Detailed instructions will be sent after your booking is confirmed."
   },
   {
     question: 'How long does a typical pest control service take?',
@@ -433,7 +433,7 @@ const faqs = [
   },
   {
     question: 'Can I reschedule my appointment?',
-    answer: 'Yes, you can reschedule your appointment by contacting our customer service team at least 24 hours in advance. For emergency or last-minute changes, please call us directly and we'll do our best to accommodate your request.'
+    answer: "Yes, you can reschedule your appointment by contacting our customer service team at least 24 hours in advance. For emergency or last-minute changes, please call us directly and we'll do our best to accommodate your request."
   },
   {
     question: 'Do you offer recurring service plans?',

@@ -252,7 +252,7 @@ const approaches = [
   },
   {
     title: 'Follow-up & Monitoring',
-    description: 'Our service doesn't end with the initial treatment. We conduct follow-up visits to ensure the infestation is controlled and preventive measures remain effective.',
+    description: "Our service doesn't end with the initial treatment. We conduct follow-up visits to ensure the infestation is controlled and preventive measures remain effective.",
     includes: [
       'Regular inspections to check for new activity',
       'Removal of traps and baits when appropriate',
@@ -279,7 +279,7 @@ const preventionTips = [
   },
   {
     title: 'Eliminate Food Sources',
-    description: 'Store food in airtight containers, clean up crumbs promptly, and don't leave pet food out overnight. Keep garbage in sealed containers with tight-fitting lids.'
+    description: "Store food in airtight containers, clean up crumbs promptly, and don't leave pet food out overnight. Keep garbage in sealed containers with tight-fitting lids."
   },
   {
     title: 'Reduce Clutter',

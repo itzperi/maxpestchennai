@@ -314,7 +314,7 @@ const services = [
 const preventionTips = [
   {
     title: 'Eliminate Standing Water',
-    description: 'Regularly empty containers that collect water such as flower pots, bird baths, pet dishes, and children's toys. Mosquitoes can breed in as little as a bottle cap of water.'
+    description: "Regularly empty containers that collect water such as flower pots, bird baths, pet dishes, and children's toys. Mosquitoes can breed in as little as a bottle cap of water."
   },
   {
     title: 'Clean Gutters Regularly',
